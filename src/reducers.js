@@ -9,6 +9,12 @@ const initilaStateSearch = {
     searchfield: ''
 }
 
+const initilaStateRobots = {
+    isPending: false,
+    robots: [],
+    error: ''
+}
+
 export const searchRobots = (state = initilaStateSearch, action = {}) => {
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:
@@ -16,12 +22,6 @@ export const searchRobots = (state = initilaStateSearch, action = {}) => {
         default:
             return state;
     }
-}
-
-const initilaStateRobots = {
-    isPending: false,
-    robots: [],
-    error: ''
 }
 
 export const requestRobots = (state = initilaStateRobots, action = {}) => {
@@ -34,6 +34,5 @@ export const requestRobots = (state = initilaStateRobots, action = {}) => {
             return Object.assign({}, state, { error: action.payload, isPending: false });
         default:
             return state;
-
     }
 }
