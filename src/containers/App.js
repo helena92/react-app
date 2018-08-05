@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setSearchfield, requestRobots } from '../actions';
+import { setSearchField, requestRobots } from '../actions';
 
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
 // the function returns an object then uses connect to change the data from reducers.
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSearchChange: (event) => dispatch(setSearchfield(event.target.value)),
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
         onRequestRobots: () => dispatch(requestRobots())
     }
 }
